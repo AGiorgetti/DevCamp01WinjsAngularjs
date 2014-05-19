@@ -22,12 +22,12 @@
 
     <!-- If the query includes 'print-pdf', use the PDF print sheet -->
     <script>
-        document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        document.write('<link rel="stylesheet" href="css/print/' + (window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper') + '.css" type="text/css" media="print">');
     </script>
 
     <!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
 </head>
 
 <body>
@@ -41,7 +41,8 @@
                 <h2>Writing Windows Store Apps with WinJS and AngularJS</h2>
                 <br />
                 <p>
-                    <big>Speaker:
+                    <big>
+                        Speaker:
                         <a href="http://www.rimordialcode.com">Alessandro Giorgetti</a> /
                         <a href="http://twitter.com/a_giorgetti">@a_giorgetti</a>
                     </big>
@@ -78,7 +79,60 @@
                 <br />
                 <span>GitHub:&nbsp;</span><a href="#">#</a>
             </section>
-          
+            <section>
+                <h3>What do I ask to a framework / library to be effective while writing an App?</h3>
+                <br />
+                <ul>
+                    <li>Modularity and Separation of Concerns</li>
+                    <li>IoC / Dependency Injection</li>
+                    <li>MV* Pattern</li>
+                    <li>A good binding infrastructure</li>
+                </ul>
+            </section>
+            <section>
+                <h3>What is WinJS?</h3>
+                <br />
+                <p>A very good move to bring web develpers to the dark side of native apps development</p>
+                <p>A collection of libraries and APIs to develop Windows Store App using Javascript and Html:</p>
+                <ul>
+                    <li>Windows 8 and Windows Phone Style controls, animations, transitions.</li>
+                    <li>Navigation Framework.</li>
+                    <li>Binding infrastructure - WinJS.Binding - or direct access to cobtriols using the DOM.</li>
+                    <li>Access to low level Win32 API and COM.</li>
+                </ul>
+                <p><!--Keep in mind that under WinJS we have standard Javascript language: I can use *almost* every library I know in the Javascript world.--></p>
+            </section>
+            <section>
+                <h3>How does the binding infrastructure work?</h3>
+                <ul>
+                    <li>Everything is based on the Observer Pattern</li>
+                    <li>Plain Javascript objects need to be wrapped for the UI to react to objects' property changes ( WinJS.Binding.as({...}) )</li>
+                    <li>Arrays and lists need to be wrapped by WinJS.Binding objects ( WinJS.Binding.List([]) )</li>
+                    <li>If you want to bind to a function you need to wrap it using another object ( WinJS.Utilities.markSupportedForProcessing() )</li>
+                    <li>Native bindings are one way only! You need to extend the framework to support two way bindings</li>
+                </ul>
+                <p>It seems there'are lots of things to learn before we can use it effectively</p>
+            </section>
+            <section>
+                <h1>WinJS code goes here!</h1>
+            </section>
+            <section>
+                <h3>Is it really required to use (All) WinJS to write a Windows Store App in Javascript?</h3>
+                <p>...according to Microsoft documentation...</p>
+                <h2>No! you can totally ignore it if you want.</h2>
+                <br />
+                <p>You can just use plain standard HTML controls and the DOM to interact with the UI.</p>
+                <p>Nonetheless WinJS has some very usefull features (like the standard controls we've talked about) that makes it pretty useful.</p>
+                <p>The idea is to keep what we consider useful and swap out what we do not need.</p>
+            </section>
+            <section>
+                <h4>Wait a second!</h4>
+                <br />
+                <h3>I know AngularJS!!</h3>
+                <br />
+                <p>It gives me lots of tools I'm already familiar with.</p>
+                <p>How long will it takes to me to have WinJS and AngularJS cooperate in a way that I can be productive writing Windows Store Apps?</p>
+            </section>
             <section>
                 <h2>That's it!&nbsp;&nbsp;&nbsp;Q &amp; A time!</h2>
                 <br />
@@ -101,30 +155,30 @@
 
     <script>
         // Full list of configuration options available here:
-        			// https://github.com/hakimel/reveal.js#configuration
-        			Reveal.initialize({
-        				controls: true,
-        				progress: true,
-        				history: true,
-        				center: true,
-        
-        				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-        				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
-        
-        				// Parallax scrolling
-        				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-        				// parallaxBackgroundSize: '2100px 900px',
-        
-        				// Optional libraries used to extend on reveal.js
-        				dependencies: [
-        					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-        					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-        					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-        					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-        				]
-        			});
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+            transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+            // Parallax scrolling
+            // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+            // parallaxBackgroundSize: '2100px 900px',
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                { src: 'lib/js/classList.js', condition: function () { return !document.body.classList; } },
+                { src: 'plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: 'plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
+                { src: 'plugin/zoom-js/zoom.js', async: true, condition: function () { return !!document.body.classList; } },
+                { src: 'plugin/notes/notes.js', async: true, condition: function () { return !!document.body.classList; } }
+            ]
+        });
     </script>
 
 </body>
