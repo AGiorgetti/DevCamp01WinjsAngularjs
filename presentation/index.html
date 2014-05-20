@@ -37,7 +37,7 @@
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
             <section>
-                <h1>Dev Camp</h1>
+                <h1>Microsoft Dev Camp</h1>
                 <h2>Writing Windows Store Apps with WinJS and AngularJS</h2>
                 <br />
                 <p>
@@ -55,14 +55,12 @@
             <section>
                 <h2>Alessandro Giorgetti</h2>
                 <br />
-                <p class="fragment">Socio fondatore di <b>SID s.r.l.</b> - società che opera nel campo della sanità</p>
-                <br />
-                <p class="fragment">Tra i fondatori di <b>DotNetMarche</b></p>
-                <br />
-                <p class="fragment">Partecipo a <b>DevMarche</b></p>
+                <p class="fragment">Founder of <b>SID s.r.l.</b> - a company that works for the HealthCare system</p>
+                <p class="fragment">Amongst the founders of <b>DotNetMarche</b></p>
+                <p class="fragment">Involved in <b>DevMarche</b></p>
                 <br />
                 <div style="text-align: left">
-                    <p>Un po' di contatti:</p>
+                    <p>contacts:</p>
                     Mail: <a href="mailto:alessandro.giorgetti@live.com">alessandro.giorgetti@live.com</a><br />
                     Blog: <a href="http://www.rimordialcode.com">PrimordialCode</a><br />
                     Twitter: <a href="http://twitter.com/a_giorgetti">@a_giorgetti</a><br />
@@ -72,7 +70,7 @@
                 </div>
             </section>
             <section>
-                <h3>Slides e Demo</h3>
+                <h3>Slides &amp; Demo</h3>
                 <br />
                 <span>Live version:&nbsp;</span><a href="#">#</a>
                 <br />
@@ -80,65 +78,118 @@
                 <span>GitHub:&nbsp;</span><a href="#">#</a>
             </section>
             <section>
-                <h3>What do I ask to a framework / library to be effective while writing an App?</h3>
+                <h3>What do I ask to a framework to be effective while writing an App?</h3>
                 <br />
                 <ul>
-                    <li>Modularity and Separation of Concerns</li>
-                    <li>IoC / Dependency Injection</li>
-                    <li>MV* Pattern</li>
-                    <li>A good binding infrastructure</li>
+                    <li class="fragment">Modularity and Separation of Concerns.</li>
+                    <li class="fragment">IoC / Dependency Injection.</li>
+                    <li class="fragment">MV* Pattern.</li>
+                    <li class="fragment">A good binding infrastructure.</li>
                 </ul>
             </section>
             <section>
                 <h3>What is WinJS?</h3>
                 <br />
-                <p>A very good move to bring web develpers to the dark side of native apps development</p>
-                <p>A collection of libraries and APIs to develop Windows Store App using Javascript and Html:</p>
+                <p class="fragment">A very good move to bring web develpers to the dark side of native apps development.</p>
+                <p class="fragment">A toolkit to develop Windows Store (Universal) Apps using Javascript and Html:</p>
                 <ul>
-                    <li>Windows 8 and Windows Phone Style controls, animations, transitions.</li>
-                    <li>Navigation Framework.</li>
-                    <li>Binding infrastructure - WinJS.Binding - or direct access to cobtriols using the DOM.</li>
-                    <li>Access to low level Win32 API and COM.</li>
+                    <li class="fragment">Windows 8 and Windows Phone Style controls, animations, transitions.</li>
+                    <li class="fragment">Navigation Framework.</li>
+                    <li class="fragment">Binding infrastructure - WinJS.Binding - or direct access to controls using the DOM.</li>
+                    <li class="fragment">Access to low level Win32 API and COM.</li>
                 </ul>
-                <p><!--Keep in mind that under WinJS we have standard Javascript language: I can use *almost* every library I know in the Javascript world.--></p>
             </section>
             <section>
-                <h3>How does the binding infrastructure work?</h3>
-                <ul>
-                    <li>Everything is based on the Observer Pattern</li>
-                    <li>Plain Javascript objects need to be wrapped for the UI to react to objects' property changes ( WinJS.Binding.as({...}) )</li>
-                    <li>Arrays and lists need to be wrapped by WinJS.Binding objects ( WinJS.Binding.List([]) )</li>
-                    <li>If you want to bind to a function you need to wrap it using another object ( WinJS.Utilities.markSupportedForProcessing() )</li>
-                    <li>Native bindings are one way only! You need to extend the framework to support two way bindings</li>
-                </ul>
-                <p>It seems there'are lots of things to learn before we can use it effectively</p>
-            </section>
+                <section>
+                    <h3>A closer look to WinJS.Bindings</h3>
+                    <ul>
+                        <li class="fragment">Everything is based on the Observer Pattern.</li>
+                        <li class="fragment">Plain Javascript objects need to be wrapped for the UI to react to objects' property changes ( WinJS.Binding.as({...}) )</li>
+                        <li class="fragment">Arrays and lists need to be wrapped by WinJS.Binding objects ( WinJS.Binding.List([]) )</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>A closer look to WinJS.Bindings</h3>
+                    <ul>
+                        <li class="fragment">If you want to bind to a function you need to wrap it using another object ( WinJS.Utilities.markSupportedForProcessing() )</li>
+                        <li class="fragment">Native bindings are one way only! You need to extend the framework to support two way bindings</li>
+                    </ul>
+                    <p class="fragment">It seems there'are lots of things to learn before I can use it effectively</p>
+                </section>
+            </section>            
             <section>
                 <h1>WinJS code goes here!</h1>
             </section>
             <section>
-                <h3>Is it really required to use (All) WinJS to write a Windows Store App in Javascript?</h3>
-                <p>...according to Microsoft documentation...</p>
-                <h2>No! you can totally ignore it if you want.</h2>
-                <br />
-                <p>You can just use plain standard HTML controls and the DOM to interact with the UI.</p>
-                <p>Nonetheless WinJS has some very usefull features (like the standard controls we've talked about) that makes it pretty useful.</p>
-                <p>The idea is to keep what we consider useful and swap out what we do not need.</p>
+                <section>
+                    <p>Is it really required to use (All) WinJS to write a Windows Store App in Javascript?</p>
+                    <br />
+                    <p class="fragment">...according to Microsoft documentation...</p>
+                    <h3 class="fragment">No! you can totally ignore it if you want.</h3>
+                    <br />
+                    <h3 class="fragment">(Do it at your own risk!)</h3>
+                </section>
+                <section>
+                    <p>You can just use plain standard HTML controls and the DOM to interact with the UI.</p>
+                    <br />
+                    <p>Nonetheless WinJS has some very usefull features (like the standard controls we've talked about) that makes it pretty useful.</p>
+                    <br />
+                    <p>The idea is to keep what we consider useful and swap out what we do not need.</p>
+                </section>
             </section>
             <section>
-                <h4>Wait a second!</h4>
+                <h3>Let's do some comparisons</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>WinJS</th>
+                            <th>AngularJs</th>
+                            <th>KnockoutJs</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Language patterns (classes, namespaces, promises...)</td>
+                            <td>yes</td>
+                            <td>partial</td>
+                            <td>no</td>
+                        </tr>
+                        <tr>
+                            <td>App patterns (MV*, IoC/DI)</td>
+                            <td>partial</td>
+                            <td>yes</td>
+                            <td>yes</td>
+                        </tr>
+                        <tr>
+                            <td>Bindings / SPA</td>
+                            <td>one way only</td>
+                            <td>yes</td>
+                            <td>yes</td>
+                        </tr>
+                        <tr>
+                            <td>(Windows) Controls</td>
+                            <td>yes</td>
+                            <td>custom directives</td>
+                            <td>custom bindings</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section>
+                <p>I'm lucky...</p>
                 <br />
                 <h3>I know AngularJS!!</h3>
                 <br />
                 <p>It gives me lots of tools I'm already familiar with.</p>
-                <p>How long will it takes to me to have WinJS and AngularJS cooperate in a way that I can be productive writing Windows Store Apps?</p>
+                <p>How long will it takes to me to have WinJS and AngularJS cooperate in a way that I can be productive writing Windows Store (Universal) Apps?</p>
             </section>
             <section>
                 <h2>That's it!&nbsp;&nbsp;&nbsp;Q &amp; A time!</h2>
                 <br />
                 <br />
                 <div style="text-align: right">
-                    <p>Contacts:</p>
+                    <p>contacts:</p>
                     Mail: <a href="mailto:alessandro.giorgetti@live.com">alessandro.giorgetti@live.com</a><br />
                     Blog: <a href="http://www.rimordialcode.com">PrimordialCode</a><br />
                     Twitter: <a href="http://twitter.com/a_giorgetti">@a_giorgetti</a><br />
