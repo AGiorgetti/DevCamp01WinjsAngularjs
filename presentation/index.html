@@ -137,7 +137,45 @@
                 </section>
             </section>
             <section>
-                <h1>WinJS code goes here!</h1>
+                <h3>WinJS code goes here!</h3>
+                <pre><code data-trim class="hljs javascript">var product = WinJS.Binding.define({
+    ProductName: "",
+    IsSelected: false
+});
+
+ui.Pages.define("/pages/ListViewBinding/listViewBinding.html", {
+
+    listData: null,
+
+    ready: function (element, options) {
+        this.listData = new WinJS.Binding.List([]); // list wrapper
+        this.createDummyData();
+        var listview = element.querySelector(".mainList").winControl;
+        
+        // setup the listview
+        listview.itemDataSource = this.listData.dataSource;
+        listview.itemTemplate = element.querySelector(".itemtemplate");
+        listview.oniteminvoked = this.itemInvoked.bind(this);
+        listView.layout = new ui.GridLayout();
+    },
+
+    itemInvoked: function (args) {
+        var dataItem = this.listData.getAt(args.detail.itemIndex);
+        dataItem.IsSelected = !dataItem.IsSelected;
+    },
+
+    createDummyData: function () {
+        // Creating dummy data .
+        //Data format : Name, Quantity, SalesPrice, IsSelected 
+
+        this.listData.push(WinJS.Binding.as(new product({ ProductName: "Product1", IsSelected: false })));
+        this.listData.push(WinJS.Binding.as(new product({ ProductName: "Product1", IsSelected: false })));
+        this.listData.push(WinJS.Binding.as(new product({ ProductName: "Product1", IsSelected: false })));
+    }
+});
+
+// somewhere in code ...
+WinJS.Binding.processAll(htmlElement, viewModel);</code></pre>
             </section>
             <section>
                 <section>
@@ -195,14 +233,13 @@
                     </table>
                 </section>
             </section>
-
             <section>
                 <p>I'm lucky...</p>
                 <br />
                 <h3>I know AngularJS!!</h3>
                 <br />
                 <p>It gives me lots of tools I'm already familiar with.</p>
-                <p class="fragment">How long will it takes to me to have WinJS and AngularJS cooperate in a way that I can be productive writing Windows Store (Universal) Apps?</p>
+                <p class="fragment">How long will it takes to me to have WinJS and AngularJS <b>cooperate</b> in a way that I can be productive writing Windows Store (Universal) Apps?</p>
             </section>
             <section>
                 <h3>Demo 1</h3>
@@ -213,12 +250,16 @@
             <section>
                 <h3>Controls!</h3>
                 <br />
-                <p>Angular controls (directives) are way different than standard WinJS Controls</p>
+                <p>AngularJS Directives are way different than standard WinJS Controls</p>
                 <br />
-                <p>We need to wrap all the standard controls in directives so they can be used with Angular.</p>
-                <span>Introducing: <b>Angular-Winjs</b> project: </span>
-                <a href="https://github.com/codemonkeychris/angular-winjs">https://github.com/codemonkeychris/angular-winjs</a>
-                <p>(remember to add the dependency to the new module: angular.module('app', ['winjs'))... )</p>
+                <small>We need to wrap all the standard controls in directives so they can be used with Angular.</small>
+                <br />
+                <br />
+                <div class="fragment">
+                    <label>Introducing: <b>Angular-Winjs</b> project: </label>
+                    <a href="https://github.com/codemonkeychris/angular-winjs">https://github.com/codemonkeychris/angular-winjs</a>
+                    <small>(remember to add the dependency to the new module: angular.module('app', ['winjs'))... )</small>
+                </div>
             </section>
             <section>
                 <h3>Demo 2</h3>
@@ -236,17 +277,19 @@
                 <h3>Navigation Frameworks</h3>
                 <br />
                 <br />
-                <span>You have at least two options:</span>
-                <ul>
-                    <li class="fragment">WinJS.Navigation frameworks</li>
-                    <li class="fragment">AngularJS Route &amp; Location services</li>
+                <p>You have loads of options:</p>
+                <ul style="text-align:left">
+                    <li class="fragment">WinJS.Navigation frameworks (bad for AngularJS).</li>
+                    <li class="fragment">AngularJS Route &amp; Location services.</li>
+                    <li class="fragment">AngularJS Ui-Router.</li>
+                    <li class="fragment">Write your own.</li>
                 </ul>
             </section>
             <section>
                 <h3>Demo 3</h3>
                 <br />
                 <br />
-                <p>Navigation frameworks, make them work toghether!</p>
+                <p>Navigation frameworks, make them work together!</p>
             </section>
             <section>
                 <h3>Application Lifecyle</h3>
@@ -255,11 +298,11 @@
                 <h2>INSER THE IMAGE HERE!</h2>
             </section>
             <section>
-                <h3>Persisting the application state state</h3>
+                <h3>Persisting the application state</h3>
                 <br />
-                <span>We have 2 options:</span>
-                <ul>
-                    <li class="fragment">LocalSettings - everything is kept in the device</li>
+                <p>We have 2 options (Windows.Storage.ApplicationData):</p>
+                <ul style="text-align:left">
+                    <li class="fragment">LocalSettings - everything is kept in the device.</li>
                     <li class="fragment">RoamingSettings - let's use the cloud!</li>
                 </ul>
             </section>
