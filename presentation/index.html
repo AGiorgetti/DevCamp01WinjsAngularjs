@@ -27,13 +27,26 @@
 
     <!--[if lt IE 9]>
         <script src="lib/js/html5shiv.js"></script>
-        <![endif]-->
+    <![endif]-->
+    <style>
+        .reveal p
+        {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .reveal table th,
+        .reveal table td
+        {
+            border-bottom: 1px solid;
+            border-right: 1px solid;
+        }
+    </style>
 </head>
 
 <body>
 
     <div class="reveal">
-
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
             <section>
@@ -55,12 +68,11 @@
             <section>
                 <h2>Alessandro Giorgetti</h2>
                 <br />
-                <p class="fragment">Founder of <b>SID s.r.l.</b> - a company that works for the HealthCare system</p>
-                <p class="fragment">Amongst the founders of <b>DotNetMarche</b></p>
-                <p class="fragment">Involved in <b>DevMarche</b></p>
+                <p class="fragment">Founder of <b>SID s.r.l.</b> - a company that works for the HealthCare system.</p>
+                <p class="fragment">One of the founders of <b>DotNetMarche</b>.</p>
+                <p class="fragment">Involved in <b>DevMarche</b>.</p>
                 <br />
                 <div style="text-align: left">
-                    <p>contacts:</p>
                     Mail: <a href="mailto:alessandro.giorgetti@live.com">alessandro.giorgetti@live.com</a><br />
                     Blog: <a href="http://www.rimordialcode.com">PrimordialCode</a><br />
                     Twitter: <a href="http://twitter.com/a_giorgetti">@a_giorgetti</a><br />
@@ -75,48 +87,55 @@
                 <span>Live version:&nbsp;</span><a href="#">#</a>
                 <br />
                 <br />
-                <span>GitHub:&nbsp;</span><a href="#">#</a>
+                <span>GitHub:&nbsp;</span><a href="https://github.com/AGiorgetti/DevCamp01WinjsAngularjs">https://github.com/AGiorgetti/DevCamp01WinjsAngularjs</a>
             </section>
             <section>
-                <h3>What do I ask to a framework to be effective while writing an App?</h3>
+                <h4>What do <b>I</b> ask to a framework to be effective while writing an App?</h4>
                 <br />
                 <ul>
                     <li class="fragment">Modularity and Separation of Concerns.</li>
                     <li class="fragment">IoC / Dependency Injection.</li>
                     <li class="fragment">MV* Pattern.</li>
-                    <li class="fragment">A good binding infrastructure.</li>
+                    <li class="fragment">A good Binding infrastructure.</li>
                 </ul>
             </section>
             <section>
-                <h3>What is WinJS?</h3>
+                <p>I've heard I can write Windows Store Apps using Javascript...</p>
                 <br />
-                <p class="fragment">A very good move to bring web develpers to the dark side of native apps development.</p>
-                <p class="fragment">A toolkit to develop Windows Store (Universal) Apps using Javascript and Html:</p>
+                <p>And someone mentioned <b>WinJS</b>...</p>
+            </section>
+            <section>
+                <h3>What is <b>WinJS</b> ?</h3>
+                <br />
+                <p class="fragment">A very good move to bring web develpers to the dark side of <b>native</b> apps development.</p>
+                <p class="fragment">A <b>toolkit</b> to develop Windows Store (Universal) Apps using Javascript and Html:</p>
                 <ul>
                     <li class="fragment">Windows 8 and Windows Phone Style controls, animations, transitions.</li>
                     <li class="fragment">Navigation Framework.</li>
-                    <li class="fragment">Binding infrastructure - WinJS.Binding - or direct access to controls using the DOM.</li>
+                    <li class="fragment">Binding infrastructure - WinJS.Binding - &amp; access to controls using the DOM.</li>
                     <li class="fragment">Access to low level Win32 API and COM.</li>
                 </ul>
             </section>
             <section>
                 <section>
-                    <h3>A closer look to WinJS.Bindings</h3>
-                    <ul>
-                        <li class="fragment">Everything is based on the Observer Pattern.</li>
-                        <li class="fragment">Plain Javascript objects need to be wrapped for the UI to react to objects' property changes ( WinJS.Binding.as({...}) )</li>
-                        <li class="fragment">Arrays and lists need to be wrapped by WinJS.Binding objects ( WinJS.Binding.List([]) )</li>
-                    </ul>
+                    <h3>Some concepts related to <b>WinJS.Bindings</b></h3>
+                    <p class="fragment">The approach is very similar to what KnockoutJS does.</p>
+                    <br />
+                    <p class="fragment">Everything is based on the Observer Pattern.</p>
+                    <br />
+                    <p class="fragment">Plain Javascript objects need to be wrapped for the UI to react to objects' property changes ( WinJS.Binding.as({...}) )</p>
+                    <br />
+                    <p class="fragment">Arrays and lists need to be wrapped by WinJS.Binding objects ( WinJS.Binding.List([]) )</p>
                 </section>
                 <section>
-                    <h3>A closer look to WinJS.Bindings</h3>
-                    <ul>
-                        <li class="fragment">If you want to bind to a function you need to wrap it using another object ( WinJS.Utilities.markSupportedForProcessing() )</li>
-                        <li class="fragment">Native bindings are one way only! You need to extend the framework to support two way bindings</li>
-                    </ul>
+                    <h3>More on <b>WinJS.Bindings</b></h3>
+                    <p class="fragment">If you want to bind to a function you need to wrap it using another object ( WinJS.Utilities.markSupportedForProcessing() )</p>
+                    <br />
+                    <p class="fragment">Native bindings are one way only! You need to extend the framework to support two way bindings</p>
+                    <br />
                     <p class="fragment">It seems there'are lots of things to learn before I can use it effectively</p>
                 </section>
-            </section>            
+            </section>
             <section>
                 <h1>WinJS code goes here!</h1>
             </section>
@@ -125,7 +144,7 @@
                     <p>Is it really required to use (All) WinJS to write a Windows Store App in Javascript?</p>
                     <br />
                     <p class="fragment">...according to Microsoft documentation...</p>
-                    <h3 class="fragment">No! you can totally ignore it if you want.</h3>
+                    <h2 class="fragment">No! you can totally <b>ignore</b> it if you want!</h2>
                     <br />
                     <h3 class="fragment">(Do it at your own risk!)</h3>
                 </section>
@@ -134,55 +153,56 @@
                     <br />
                     <p>Nonetheless WinJS has some very usefull features (like the standard controls we've talked about) that makes it pretty useful.</p>
                     <br />
-                    <p>The idea is to keep what we consider useful and swap out what we do not need.</p>
+                    <p>The idea is to keep what we consider useful and swap out / replace what we do not need.</p>
+                </section>
+                <section>
+                    <h4>Let's do some comparisons</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>WinJS</th>
+                                <th>AngularJs</th>
+                                <th>KnockoutJs</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Language patterns (classes, namespaces, promises...)</td>
+                                <td>yes</td>
+                                <td>partial</td>
+                                <td>no</td>
+                            </tr>
+                            <tr>
+                                <td>App patterns (MV*, IoC/DI)</td>
+                                <td>partial</td>
+                                <td>yes</td>
+                                <td>yes</td>
+                            </tr>
+                            <tr>
+                                <td>Bindings / SPA</td>
+                                <td>1-way / custom</td>
+                                <td>yes / custom</td>
+                                <td>yes / custom</td>
+                            </tr>
+                            <tr>
+                                <td>(Windows) Controls</td>
+                                <td>yes</td>
+                                <td>custom directives</td>
+                                <td>custom bindings</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </section>
             </section>
-            <section>
-                <h3>Let's do some comparisons</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>WinJS</th>
-                            <th>AngularJs</th>
-                            <th>KnockoutJs</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Language patterns (classes, namespaces, promises...)</td>
-                            <td>yes</td>
-                            <td>partial</td>
-                            <td>no</td>
-                        </tr>
-                        <tr>
-                            <td>App patterns (MV*, IoC/DI)</td>
-                            <td>partial</td>
-                            <td>yes</td>
-                            <td>yes</td>
-                        </tr>
-                        <tr>
-                            <td>Bindings / SPA</td>
-                            <td>one way only</td>
-                            <td>yes</td>
-                            <td>yes</td>
-                        </tr>
-                        <tr>
-                            <td>(Windows) Controls</td>
-                            <td>yes</td>
-                            <td>custom directives</td>
-                            <td>custom bindings</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
+
             <section>
                 <p>I'm lucky...</p>
                 <br />
                 <h3>I know AngularJS!!</h3>
                 <br />
                 <p>It gives me lots of tools I'm already familiar with.</p>
-                <p>How long will it takes to me to have WinJS and AngularJS cooperate in a way that I can be productive writing Windows Store (Universal) Apps?</p>
+                <p class="fragment">How long will it takes to me to have WinJS and AngularJS cooperate in a way that I can be productive writing Windows Store (Universal) Apps?</p>
             </section>
             <section>
                 <h2>That's it!&nbsp;&nbsp;&nbsp;Q &amp; A time!</h2>
